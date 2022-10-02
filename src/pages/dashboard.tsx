@@ -82,7 +82,7 @@ export default function Dashboard() {
 
               <Chart options={options} series={series} type="area" height={160} />
             </Box>
-            <Box bg="gray.800" p="8" borderRadius={8}>
+            <Box bg="gray.800" p="8" pb="4" borderRadius={8}>
               <Text fontSize="lg" mb="4">
                 Taxa de abertura
               </Text>
