@@ -1,3 +1,5 @@
+import { useEffect, useState } from 'react';
+
 import dynamic from 'next/dynamic';
 import Head from 'next/head';
 
@@ -49,6 +51,7 @@ const options: ApexOptions = {
     ]
   },
   fill: {
+    colors: [theme.colors.orange[500]],
     opacity: 0.3,
     type: 'gradient',
     gradient: {
@@ -56,12 +59,21 @@ const options: ApexOptions = {
       opacityFrom: 0.7,
       opacityTo: 0.3
     }
+  },
+  stroke: {
+    colors: [theme.colors.orange[500]]
   }
 };
 
 const series = [{ name: 'series1', data: [587, 230, 289, 17, 90, 298, 982] }];
 
 export default function Dashboard() {
+  const [showChart, setShowChart] = useState(false);
+
+  useEffect(() => {
+    setShowChart(true);
+  }, []);
+
   return (
     <>
       <Head>
@@ -80,14 +92,14 @@ export default function Dashboard() {
                 Inscritos da semana
               </Text>
 
-              <Chart options={options} series={series} type="area" height={160} />
+              {showChart && <Chart options={options} series={series} type="area" height={160} />}
             </Box>
             <Box bg="gray.800" p={['6', '8']} pb="4" borderRadius={8}>
               <Text fontSize="lg" mb="4">
                 Taxa de abertura
               </Text>
 
-              <Chart options={options} series={series} type="area" height={160} />
+              {showChart && <Chart options={options} series={series} type="area" height={160} />}
             </Box>
           </SimpleGrid>
         </Flex>
