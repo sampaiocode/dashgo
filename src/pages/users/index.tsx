@@ -1,19 +1,5 @@
-import {
-  Box,
-  Button,
-  Checkbox,
-  Flex,
-  Heading,
-  Icon,
-  Table,
-  Tbody,
-  Td,
-  Text,
-  Th,
-  Thead,
-  Tr,
-  useBreakpointValue
-} from '@chakra-ui/react';
+import { useEffect } from 'react';
+import * as Chakra from '@chakra-ui/react';
 
 import Link from 'next/link';
 import Head from 'next/head';
@@ -24,10 +10,16 @@ import { Pagination } from '../../components/Pagination';
 import { Sidebar } from '../../components/Sidebar';
 
 export default function UserList() {
-  const isWideVersion = useBreakpointValue({
+  const isWideVersion = Chakra.useBreakpointValue({
     base: false,
     lg: true
   });
+
+  useEffect(() => {
+    fetch('http://localhost:3000/api/users')
+      .then(response => response.json())
+      .then(data => console.log(data));
+  }, []);
 
   return (
     <>
@@ -35,131 +27,131 @@ export default function UserList() {
         <title>Lista de Usúarios | Dashgo</title>
       </Head>
 
-      <Box>
+      <Chakra.Box>
         <Header />
 
-        <Flex w="100%" my="6" maxWidth={1480} mx="auto" px="6">
+        <Chakra.Flex w="100%" my="6" maxWidth={1480} mx="auto" px="6">
           <Sidebar />
 
-          <Box flex="1" bg="gray.800" p="8" borderRadius={8}>
-            <Flex mb="8" justify="space-between" align="center">
-              <Heading size="lg" fontWeight="normal">
+          <Chakra.Box flex="1" bg="gray.800" p="8" borderRadius={8}>
+            <Chakra.Flex mb="8" justify="space-between" align="center">
+              <Chakra.Heading size="lg" fontWeight="normal">
                 Usuários
-              </Heading>
+              </Chakra.Heading>
 
               <Link href="/users/create" passHref>
-                <Button
+                <Chakra.Button
                   as="a"
                   size="sm"
                   fontSize="sm"
                   colorScheme="orange"
-                  leftIcon={<Icon as={RiAddLine} fontSize="20" />}
+                  leftIcon={<Chakra.Icon as={RiAddLine} fontSize="20" />}
                 >
                   Criar novo
-                </Button>
+                </Chakra.Button>
               </Link>
-            </Flex>
+            </Chakra.Flex>
 
-            <Table colorScheme="whiteAlpha">
-              <Thead>
-                <Tr>
-                  <Th color="gray.300" width="8" px={['4', '4', '6']}>
-                    <Checkbox colorScheme="orange" />
-                  </Th>
-                  <Th>Usuário</Th>
-                  {isWideVersion && <Th>Data de cadastro</Th>}
-                  <Th width="8"></Th>
-                </Tr>
-              </Thead>
+            <Chakra.Table colorScheme="whiteAlpha">
+              <Chakra.Thead>
+                <Chakra.Tr>
+                  <Chakra.Th color="gray.300" width="8" px={['4', '4', '6']}>
+                    <Chakra.Checkbox colorScheme="orange" />
+                  </Chakra.Th>
+                  <Chakra.Th>Usuário</Chakra.Th>
+                  {isWideVersion && <Chakra.Th>Data de cadastro</Chakra.Th>}
+                  <Chakra.Th width="8"></Chakra.Th>
+                </Chakra.Tr>
+              </Chakra.Thead>
 
-              <Tbody>
-                <Tr>
-                  <Td px={['4', '4', '6']}>
-                    <Checkbox colorScheme="orange" />
-                  </Td>
-                  <Td>
-                    <Box>
-                      <Text fontWeight="bold">Deivit Eduardo</Text>
-                      <Text fontSize="sm" color="gray.300">
+              <Chakra.Tbody>
+                <Chakra.Tr>
+                  <Chakra.Td px={['4', '4', '6']}>
+                    <Chakra.Checkbox colorScheme="orange" />
+                  </Chakra.Td>
+                  <Chakra.Td>
+                    <Chakra.Box>
+                      <Chakra.Text fontWeight="bold">Deivit Eduardo</Chakra.Text>
+                      <Chakra.Text fontSize="sm" color="gray.300">
                         eduardoalmeida5547@gmail.com
-                      </Text>
-                    </Box>
-                  </Td>
-                  {isWideVersion && <Td>01 de Outubro, 2022</Td>}
-                  <Td>
-                    <Button
+                      </Chakra.Text>
+                    </Chakra.Box>
+                  </Chakra.Td>
+                  {isWideVersion && <Chakra.Td>01 de Outubro, 2022</Chakra.Td>}
+                  <Chakra.Td>
+                    <Chakra.Button
                       as="a"
                       size="sm"
                       fontSize="sm"
                       colorScheme="green"
                       iconSpacing={isWideVersion ? '1.5' : '-0.5'}
-                      leftIcon={<Icon as={RiPencilLine} fontSize="16" />}
+                      leftIcon={<Chakra.Icon as={RiPencilLine} fontSize="16" />}
                     >
                       {isWideVersion && 'Editar'}
-                    </Button>
-                  </Td>
-                </Tr>
+                    </Chakra.Button>
+                  </Chakra.Td>
+                </Chakra.Tr>
 
-                <Tr>
-                  <Td px={['4', '4', '6']}>
-                    <Checkbox colorScheme="orange" />
-                  </Td>
-                  <Td>
-                    <Box>
-                      <Text fontWeight="bold">Deivit Eduardo</Text>
-                      <Text fontSize="sm" color="gray.300">
+                <Chakra.Tr>
+                  <Chakra.Td px={['4', '4', '6']}>
+                    <Chakra.Checkbox colorScheme="orange" />
+                  </Chakra.Td>
+                  <Chakra.Td>
+                    <Chakra.Box>
+                      <Chakra.Text fontWeight="bold">Deivit Eduardo</Chakra.Text>
+                      <Chakra.Text fontSize="sm" color="gray.300">
                         eduardoalmeida5547@gmail.com
-                      </Text>
-                    </Box>
-                  </Td>
-                  {isWideVersion && <Td>01 de Outubro, 2022</Td>}
-                  <Td>
-                    <Button
+                      </Chakra.Text>
+                    </Chakra.Box>
+                  </Chakra.Td>
+                  {isWideVersion && <Chakra.Td>01 de Outubro, 2022</Chakra.Td>}
+                  <Chakra.Td>
+                    <Chakra.Button
                       as="a"
                       size="sm"
                       fontSize="sm"
                       colorScheme="green"
                       iconSpacing={isWideVersion ? '1.5' : '-0.5'}
-                      leftIcon={<Icon as={RiPencilLine} fontSize="16" />}
+                      leftIcon={<Chakra.Icon as={RiPencilLine} fontSize="16" />}
                     >
                       {isWideVersion && 'Editar'}
-                    </Button>
-                  </Td>
-                </Tr>
+                    </Chakra.Button>
+                  </Chakra.Td>
+                </Chakra.Tr>
 
-                <Tr>
-                  <Td px={['4', '4', '6']}>
-                    <Checkbox colorScheme="orange" />
-                  </Td>
-                  <Td>
-                    <Box>
-                      <Text fontWeight="bold">Deivit Eduardo</Text>
-                      <Text fontSize="sm" color="gray.300">
+                <Chakra.Tr>
+                  <Chakra.Td px={['4', '4', '6']}>
+                    <Chakra.Checkbox colorScheme="orange" />
+                  </Chakra.Td>
+                  <Chakra.Td>
+                    <Chakra.Box>
+                      <Chakra.Text fontWeight="bold">Deivit Eduardo</Chakra.Text>
+                      <Chakra.Text fontSize="sm" color="gray.300">
                         eduardoalmeida5547@gmail.com
-                      </Text>
-                    </Box>
-                  </Td>
-                  {isWideVersion && <Td>01 de Outubro, 2022</Td>}
-                  <Td>
-                    <Button
+                      </Chakra.Text>
+                    </Chakra.Box>
+                  </Chakra.Td>
+                  {isWideVersion && <Chakra.Td>01 de Outubro, 2022</Chakra.Td>}
+                  <Chakra.Td>
+                    <Chakra.Button
                       as="a"
                       size="sm"
                       fontSize="sm"
                       colorScheme="green"
                       iconSpacing={isWideVersion ? '1.5' : '-0.5'}
-                      leftIcon={<Icon as={RiPencilLine} fontSize="16" />}
+                      leftIcon={<Chakra.Icon as={RiPencilLine} fontSize="16" />}
                     >
                       {isWideVersion && 'Editar'}
-                    </Button>
-                  </Td>
-                </Tr>
-              </Tbody>
-            </Table>
+                    </Chakra.Button>
+                  </Chakra.Td>
+                </Chakra.Tr>
+              </Chakra.Tbody>
+            </Chakra.Table>
 
             <Pagination />
-          </Box>
-        </Flex>
-      </Box>
+          </Chakra.Box>
+        </Chakra.Flex>
+      </Chakra.Box>
     </>
   );
 }
