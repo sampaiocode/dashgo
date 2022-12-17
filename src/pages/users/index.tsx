@@ -128,18 +128,6 @@ export default function UserList() {
                             </Box>
                           </Td>
                           {isWideVersion && <Td>{user.createdAt}</Td>}
-                          <Td>
-                            <Button
-                              as="a"
-                              size="sm"
-                              fontSize="sm"
-                              colorScheme="green"
-                              iconSpacing={isWideVersion ? '1.5' : '-0.5'}
-                              leftIcon={<Icon as={RiPencilLine} fontSize="16" />}
-                            >
-                              {isWideVersion && 'Editar'}
-                            </Button>
-                          </Td>
                         </Tr>
                       );
                     })}
