@@ -9,9 +9,7 @@ import { makeServer } from '../services/mirage';
 
 import { theme } from '../styles/theme';
 
-if (process.env.NODE_ENV === 'development') {
-  makeServer();
-}
+makeServer();
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (

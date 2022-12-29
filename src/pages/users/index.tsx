@@ -26,7 +26,7 @@ import { Pagination } from '../../components/Pagination';
 import { Sidebar } from '../../components/Sidebar';
 
 import { useUsers } from '../../hooks/useUsers';
-import { RiAddLine, RiPencilLine } from 'react-icons/ri';
+import { RiAddLine } from 'react-icons/ri';
 import { queryClient } from '../../services/queryClient';
 import { api } from '../../services/api';
 
