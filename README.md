@@ -1,3 +1,7 @@
+<p align="center">
+  <img alt="Imagem do projeto Dashgo" src=".github/preview.png" width="100%">
+</p>
+
 <h4 align="center"><a href="https://dashgo-sampaiocode.vercel.app">Clique para visitar o projeto</a></h4>
 
 ---
@@ -18,6 +22,27 @@ Este projeto foi desenvolvido utilizando as seguintes tecnologias:
 - [React Hook Form](https://react-hook-form.com/)
 - [React Query](https://react-query-v3.tanstack.com/)
 - [Yup](https://github.com/jquense/yup)
+
+## 🚀 Instalação
+
+**Clone o projeto**
+
+```bash
+git clone https://github.com/sampaiocode/ignews.git
+```
+
+**Siga os passos abaixo**
+
+```bash
+# Acesse a pasta
+$ cd dashgo
+
+# Instale as dependências
+$ yarn
+
+# Inicie a aplicação
+$ yarn dev
+```
 
 ## 📝 Licença
 
