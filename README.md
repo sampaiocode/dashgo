@@ -8,7 +8,7 @@
 
 ## 💻 Sobre o projeto
 
-Projeto desenvolvido durante o Chapter IV da trilha ReactJS - Ignite da Rocketseat. O projeto que consiste em um dashboard, construído usando completamente o Chakra UI.
+Projeto desenvolvido durante o Chapter IV da trilha ReactJS - Ignite da Rocketseat. A aplicação consiste em um dashboard, construído usando completamente o Chakra UI.
 
 ## 🛠️ Tecnologias
 
@@ -19,8 +19,8 @@ Este projeto foi desenvolvido utilizando as seguintes tecnologias:
 - [TypeScript](https://www.typescriptlang.org/)
 - [Chakra UI](https://chakra-ui.com/)
 - [Mirage JS](https://miragejs.com/)
-- [React Hook Form](https://react-hook-form.com/)
 - [React Query](https://react-query-v3.tanstack.com/)
+- [React Hook Form](https://react-hook-form.com/)
 - [Yup](https://github.com/jquense/yup)
 
 ## 🚀 Instalação
